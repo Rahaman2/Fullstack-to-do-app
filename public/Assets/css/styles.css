@@ -1,0 +1,38 @@
+/* Custom styling */
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.tasks {
+    list-style-type: none;
+    padding: 0;
+}
+
+.task-item {
+    background-color: #f8f9fa; /* Light gray background */
+    border-radius: 5px;
+    margin-bottom: 10px; /* Add some space between task items */
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.delete-btn {
+    background-color: #dc3545; /* Red color for delete button */
+    color: white; /* White text color */
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Add smooth transition */
+}
+
+.delete-btn:hover {
+    background-color: #c82333; /* Darker red color on hover */
+}
