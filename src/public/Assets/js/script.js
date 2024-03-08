@@ -24,7 +24,7 @@ const updateCount = (eventTrigger) => eventTrigger === taskBtn? addCount() : min
 const deleteTask = (e) => {
     const delBtn = e.target;
     delBtn.parentElement.remove();
-    const eventTrigger = delBtn;
+    const eventTrigger = delBtn;const taskForm = document.querySelector('form');
     updateCount(eventTrigger);
 };
 
@@ -58,3 +58,31 @@ const handleTask = (e) => {
 };
 
 taskBtn.addEventListener("click", handleTask);
+
+const taskForm = document.querySelector('form');
+
+// Function to handle form submission
+const handleFormSubmit = async (e) => {
+    e.preventDefault(); // Prevent default form submission
+
+    const formData = new FormData(taskForm); // Get form data
+
+    try {
+        const response = await fetch('/tasks', { // Replace '/submit-url' with your server endpoint
+            method: 'POST',
+            body: formData
+        });
+
+        if (response.ok) {
+            const data = await response.json();
+            // Handle successful response (e.g., update UI)
+        } else {
+            // Handle error response
+        }
+    } catch (error) {
+        console.error('Error:', error);
+    }
+};
+
+// Add event listener to form submit event
+taskForm.addEventListener('submit', handleFormSubmit);
