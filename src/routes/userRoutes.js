@@ -3,7 +3,7 @@ const router = express.Router();
 
 // redirects to dashboard/todo if the user is authenticated
 const redirectToDashboard = (req, res, next) => {
-    if(req.isAutenticated()) {
+    if(req.isAutenticated) {
         return res.redirect("/todo");
     }
     return next();
